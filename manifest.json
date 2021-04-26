@@ -1,0 +1,23 @@
+{
+    "name": "Proposta Automatica",
+    "version": "1.0",
+    "description": "Enviando Prospostas Automaticamente!",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "permissions": ["activeTab", "declarativeContent", "storage", "webNavigation", "http://99freelas.com.br/*", "https://99freelas.com.br/*","http://www.99freelas.com.br/*", "https://www.99freelas.com.br/*"],
+    "content_scripts": [
+        {
+            "matches": ["http://99freelas.com.br/*", "https://99freelas.com.br/*","http://www.99freelas.com.br/*", "https://www.99freelas.com.br/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "page_action": {
+        "default_popup": "popup.html"
+      },
+      "web_accessible_resources": [
+        "*.mp3"
+    ],
+    "manifest_version": 2
+}
